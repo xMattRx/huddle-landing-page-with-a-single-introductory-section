@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 
     .background {
         align-items: center;
@@ -11,15 +11,32 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100%;
+        min-height: 100vh;
         padding: 40px 80px;
         width: 100%;
 
+        @media (max-width: 1190px) {
+            background-size: cover;
+            padding: 10px 40px;
+        }
+
+        @media (max-width: 900px) {
+            background-image: url('./assets/bg-mobile.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
         .header {
-            margin-right: 1000px;
+            max-width: 1200px;
+            width: 100%;
 
             .logo {
                 width: 170px;
+
+                @media (max-width: 900px) {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                }
             }
         }
 
@@ -29,13 +46,43 @@
             gap: 60px;
             margin-top: 50px;
 
+            @media (max-width: 900px) {
+                flex-direction: column;
+            }
+
+            .main_image {
+                @media (max-width: 1190px) {
+                    width: 100%;
+                    max-width: 500px;
+                }
+            }
+
             .section {
                 margin-top: 55px;
+
+                @media (max-width: 1190px) {
+                    margin-top: 0px;
+                }
+
+                @media (max-width: 900px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 .title {
                     font-family: 'Poppins', sans-serif;
                     font-size: 35px;
                     max-width: 400px;
+
+                    @media (max-width: 1049px) {
+                        font-size: 25px;
+                        max-width: 300px;
+                    }
+
+                    @media (max-width: 900px) {
+                        text-align: center;
+                    }
                 }
 
                 .paragraph {
@@ -43,6 +90,14 @@
                     line-height: 24px;
                     margin-top: 25px;
                     max-width: 460px;
+
+                    @media (max-width: 1049px) {
+                        max-width: 300px;
+                    }
+
+                    @media (max-width: 900px) {
+                        text-align: center;
+                    }
                 }
 
                 .button {
@@ -60,14 +115,27 @@
                         background-color: hsl(300, 69%, 71%);
                         color: #fff;
                     }
+
+                    @media (max-width: 900px) {
+                        margin-top: 24px;
+                        padding: 10px 80px;
+                    }
                 }
             }
         }
 
         .footer {
             display: flex;
-            margin-left: 1100px;
             gap: 18px;
+            justify-content: flex-end;
+            max-width: 1200px;
+            width: 100%;
+
+            @media (max-width: 900px) {
+                justify-content: center;
+                margin-top: 80px;
+                margin-bottom: 30px;
+            }
 
             .icon {
                 align-items: center;
